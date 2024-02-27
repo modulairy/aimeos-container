@@ -38,8 +38,8 @@ jobs:
         uses:  docker/build-push-action@v5
         with:
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
+          tags: ${{ github.event.inputs.aimeos_version }}
+          labels: ${{ github.event.inputs.aimeos_version }}
           build-args: AIMEOS_VERSION=${{ github.event.inputs.aimeos_version }}
           context: .
           platforms: linux/amd64,linux/arm64
