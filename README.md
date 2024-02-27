@@ -9,12 +9,12 @@ You can build and run your Docker container by following the steps below:
 1. **Build Docker Image:**
 
    ```bash
-   docker build -t aimeos-webshop:latest .
+   docker build -t modulairy/aimeos:latest .
    ```
 2. **Create and Run Docker Container:**
 
    ```bash
-   docker run -p 8080:80 aimeos-webshop:latest
+   docker run -p 8080:80 modulairy/aimeos:latest
    ```
 3. **View in Browser:**
    Visit `http://localhost:8080` in your browser to access the Aimeos Webshop.
