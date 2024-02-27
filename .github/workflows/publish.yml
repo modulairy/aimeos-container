@@ -1,8 +1,11 @@
 name: Doploy to Docker Hub
 
 on:
-  release:
-    types: [published]
+  workflow_dispatch:
+    inputs:
+      aimeos_version:
+        description: 'Aimeos Tag'     
+        required: true
 
 permissions:
   contents: read
@@ -37,7 +40,7 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          build-args: AIMEOS_VERSION=${{ steps.meta.outputs.tags }}
+          build-args: AIMEOS_VERSION=${{ github.event.inputs.aimeos_version }}
           context: .
           platforms: linux/amd64,linux/arm64
           
